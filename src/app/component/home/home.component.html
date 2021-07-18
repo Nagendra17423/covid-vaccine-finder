@@ -1,0 +1,286 @@
+<div class="jumbotron text-center">
+    <h1 class="display-4" style="color:grey">Covid-19 Tracker</h1>
+    <hr>
+    <app-data-card-dash-board [TotalRecovered]=TotalRecovered [TotalConfirmed]=TotalConfirmed [TotalDeaths]=TotalDeaths>
+    </app-data-card-dash-board>
+  </div>
+  
+  
+  
+  <br>
+  <br>
+  
+  <div class="container  col-lg-12" style="margin-top:40px;">
+  
+    <h1 class="text-center" style="color:grey">How to Protect Yourself & Others</h1>
+    <h2 class="text-center" style="color:rgb(198, 209, 198)">Follow these simple precautions to reduce your chances of contracting the new coronavirus, which causes the disease known as COVID-19.</h2>
+  
+  
+    <div class="ui three ">
+      <div class="row mx-auto d-flex justify-content-center">
+      <div class="col-lg-3 col-sm-12 col-md-6 ">
+        <div class="ui fluid  col-lg-4 card text-center">
+          <div class="image " style="font-size: 44px; background-color:black;color:white;">
+            <!-- <img src="/images/avatar/large/daniel.jpg"> -->
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header">AVOID CLOSE CONTACT</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12 col-md-6 ">
+        <div class="ui fluid  card text-center" >
+          <div class="image text-center" style="font-size: 44px; background-color:black;color:white;">
+            <!-- <img src="/images/avatar/large/helen.jpg"> -->
+            <i class="fa fa-bed" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header">COVER YOUR MOUTH</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12 col-md-6">
+        <div class="ui fluid card   text-center">
+          <div class="image text-center" style="font-size: 44px; background-color:black;color:white;">
+            <!-- <img src="/images/avatar/large/elliot.jpg"> -->
+            <i class="fa fa-user-md" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header">CLEAN YOUR HANDS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  <br><br>
+  
+  <div class="container col-lg-12">
+    <h2  style="color:grey">HelpLine</h2>
+    <!-- <div class="row mx-auto d-flex justify-content-center"> -->
+  
+   
+    <!-- <div class="col-lg-6"> -->
+      
+    <!-- </div> -->
+  <!-- </div> -->
+  <br>
+  <br>
+  
+  <div class="row">
+  <div class="col-lg-12 text-center"  >
+    <!-- <i class="fa fa-envelope" 
+    aria-hidden="true" 
+    style="font-size: 44px; background-color:black;color:white;"></i>
+    <label>abc@gmail.com</label>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-facebook-f"></i>
+    <i class="fas fa-phone"></i>
+    <i class="fas fa-phone"></i> -->
+  
+    
+    <div class="ui five">
+      <div class="row mx-auto d-flex justify-content-center">
+  
+      
+      <div class="col-lg-2 col-sm-12 col-md-6">
+        <div class="ui fluid card text-center">
+          <div class="image " style="font-size: 44px; background-color:rgb(248, 246, 246);color:rgb(12, 11, 24);">
+            <!-- <img src="/images/avatar/large/daniel.jpg"> -->
+            <i class="fa fa-envelope" 
+            aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header">{{primary===undefined?"":primary.email}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-sm-12 col-md-6">
+        <div class="ui fluid card text-center" >
+          <div class="image text-center" style="font-size: 44px; background-color:rgb(250, 244, 244);color:rgb(68, 140, 235);">
+            <!-- <img src="/images/avatar/large/helen.jpg"> -->
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header" href="{{primary===undefined?'':primary.twitter}}"> 
+             Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12 col-md-6">
+        <div class="ui fluid card text-center">
+          <div class="image text-center" style="font-size: 44px; background-color:rgb(245, 243, 243);color:rgb(68, 140, 235);">
+            <!-- <img src="/images/avatar/large/elliot.jpg"> -->
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header" href="{{primary===undefined?'':primary.facebook}}"> 
+              Facebook</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-2 col-sm-12 col-md-6">
+        <div class="ui fluid card text-center">
+          <div class="image text-center" style="font-size: 44px; background-color:rgb(239, 247, 244);color:rgb(11, 141, 28);">
+            <!-- <img src="/images/avatar/large/elliot.jpg"> -->
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header">{{primary===undefined?'':primary.number}}</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-2 col-sm-12 col-md-6">
+        <div class="ui fluid card text-center">
+          <div class="image text-center" style="font-size: 44px; background-color:rgb(233, 240, 238);color:rgb(11, 141, 28);">
+            <!-- <img src="/images/avatar/large/elliot.jpg"> -->
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <a class="header">(TOLL-FREE):{{primary===undefined?'':primary.number}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+    
+  
+  <br>
+  </div>
+  </div>
+  
+  <div class="text-left mx-auto d-flex justify-content-center " >
+    <h2 class="col-lg-3" style="color:grey;display:inline-block;">HelpLine(StateWise):</h2>
+    <select class="col-lg-7 " #h (change)="HelpLine(h.value)" style="display:inline-block;font-size:17px;">
+      <option *ngFor="let s of state " value="{{s.number}}">{{s.loc}}</option>
+    </select>
+    <h4 class="col-lg-2" 
+    *ngIf="state" 
+    style="display:inline-block;font-size:17px;">&nbsp;&nbsp;{{helpline ==="" ?"":helpline}}</h4>
+  </div>
+  
+  
+  
+  </div>
+  <br>
+    
+  
+  <br>
+  
+  
+  <!-- <br><br>
+   -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- 
+    <div class="container ">
+      <div class="row">
+  
+     
+      <div class="col-lg-6 text-center">
+        <h2  style="color:grey">HelpLine(StateWise):</h2>
+      </div>
+    <div class="ui form col-lg-6">
+      <div class="field">
+        <select>
+          <option value="">Gender</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+      </div>
+    </div>
+  
+  </div>
+  <br>
+  <br>
+  
+  <div class="row">
+    <div class="col-lg-12 text-center">
+  <h3>kdksdkjds</h3>>
+    </div>
+  </div>
+  
+  
+  </div> -->
+  
+  </div>
+  
+  <div class="footer">
+    <p>&copy; copyright 2021 used (covid19 ,rootnet api ) </p>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- 
+  <div class="ui form">
+    <div class="inline fields">
+      <label for="fruit">Select Cases:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="cases" id="confirm" checked="" tabindex="0" class="hidden">
+          <label for="confirm">Confirmed</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="cases" id="death" tabindex="0" class="hidden">
+          <label for="death">Death</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="cases" id="recover" tabindex="0" class="hidden">
+          <label for="recover">Recovered</label>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+  
+  
+  
+  
+  
+  
+    <div class="row">
+  
+      <!-- <div class="col-lg-6">
+        <google-chart [data]="columnChart"></google-chart>
+      </div>
+  
+      <div class="col-lg-6">
+        <google-chart [data]="pieChart"></google-chart>
+      </div> -->
+  
+      <!-- <div class="chart-wrapper">
+        <canvas baseChart 
+        [data]="doughnutChartData"
+        [labels]="doughnutChartLabels"
+        [chartType]="doughnutChartType">
+      </canvas> -->
+  
+    </div>
+  
+    <!-- </div> -->

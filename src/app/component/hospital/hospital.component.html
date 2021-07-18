@@ -1,0 +1,121 @@
+<div class="jumbotron text-center">
+    <h1 class="display-4" style="color:grey"> State Hospitality Details</h1>
+
+
+    <div class="mx-auto">
+        <div class="form-control-group col-lg-6 mx-auto">
+            <select 
+            name="c" class="form-control mx-auto" #input (change)="Update(input.value)">Select State:
+                <option class="mx-auto text-center" 
+                value="{{s.state}}" 
+                *ngFor="let s of beds">{{s.state}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+
+
+
+    <div class="global" *ngIf="state && table">
+
+
+        <div class="row mx-auto d-flex justify-content-center ">
+            <div class="card col-lg-3 col-sm-12 col-md-6">
+                <div class="ui {{ruralhos <100 ?'red':'green'}} statistic">
+                    <div class="label">
+                        <h3 class="">RuralHospitals</h3>
+                    </div>
+                    <div class="value ">
+                        <!-- {{ TotalRecovered}} -->
+                      
+{{ruralhos}}
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card col-lg-3 col-sm-12 col-md-6">
+                <div class="ui {{ruralbeds <100 ?'red':'green'}} statistic">
+                    <div class="label">
+                        <h3>RuralBeds</h3>
+                    </div>
+                    <div class="value ">
+                        {{ruralbeds}}
+                       
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card col-lg-3 col-sm-12 col-md-6">
+                <div class="ui {{urbanhos <300 ?'red':'green'}}  statistic">
+                    <div class="label">
+                        <h3>
+                            UrbanHospitals
+                        </h3>
+                    </div>
+                    <div class="value ">
+                        {{urbanhos}}
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-sm-12 col-md-6">
+                <div class="ui {{urbanbeds <500 ?'red':'green'}}  statistic">
+                    <div class="label">
+                        <h3>
+                            UrbanBeds
+                        </h3>
+                    </div>
+                    <div class="value ">
+                        {{urbanbeds}}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <table class="ui celled table" >
+            
+            <!-- *ngIf="show" -->
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>City</th>
+                    <th>Name</th>
+                    <th>HospitalBeds</th>
+                    <th>AdmissionCapacity</th>
+                    <th>Ownership</th>
+                </tr>
+            </thead>
+            <tbody>
+     <tr *ngFor="let center of table;let i=index">
+     <td class="positive">{{i+1}}</td>
+      <td class="positive">{{center.city}}</td>
+      <td class="positive">{{center.name}}</td>
+      <td class="{{ (center.hospitalBeds) <=100?'negative':'positive' }}">
+          {{center.hospitalBeds}}</td>    
+          <td class="{{ (center.admissionCapacity) <=500?'negative':'positive' }}">
+            {{center.admissionCapacity}}</td>   
+            <td class="{{center.ownership ==='Govt.'?'positive':'negative'}}">
+                {{center.ownership}}</td> 
+        </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+</div>

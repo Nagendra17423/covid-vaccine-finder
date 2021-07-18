@@ -19,6 +19,9 @@
     "@angular/platform-browser": "~11.2.10",
     "@angular/platform-browser-dynamic": "~11.2.10",
     "@angular/router": "~11.2.10",
+    "@ngx-loading-bar/core": "^5.1.2",
+    "@ngx-loading-bar/http-client": "^5.1.2",
+    "bootstrap": "^5.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
