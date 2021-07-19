@@ -1,0 +1,51 @@
+<div class="jumbotron text-center">
+    <h1 class="display-4" style="color:grey">Covid-19 Country Tracker  </h1>
+    <br>
+   <div class="mx-auto">
+    <div class="form-control-group col-lg-6 mx-auto">
+        <select name="c" class="form-control mx-auto" 
+       #input (change)="Update(input.value)">Select Country:
+        <option class="mx-auto text-center" *ngFor="let i of country" 
+        value={{i}} >{{i}}
+     </option>
+     </select>
+    </div>
+   </div>
+   <br>
+   <app-data-card-dash-board *ngIf="show"
+  [TotalRecovered]=TotalRecovered
+  [TotalConfirmed]=TotalConfirmed
+  [TotalDeaths]=TotalDeaths>
+  </app-data-card-dash-board>
+  <br>
+
+   <!-- <app-dashboard-card
+  [TotalRecovered]={{TotalRecovered}}
+  [TotalConfirmed]={{TotalConfirmed}}
+  [TotalDeaths]={{TotalDeaths}}>
+
+    </app-dashboard-card> -->
+
+<h3 *ngIf="show">Cases On Daily Basis  in Country :{{input.value}}</h3>
+    <table class="ui celled table" *ngIf="show" >
+      <thead>
+        <tr>
+          <th>Sr No:</th>
+          <th>Active Cases:</th>
+          <th>Date:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let center of data;let i=index">
+          <td class="positive">{{i}}</td>
+          <td class="{{center.Active ===0 ?'positive' :'negative'}}">{{center.Active}}</td>
+          <td class="{{center.Date   !=='' ?'positive':'negative'}}">
+              {{center.Date}}</td>    </tr>
+      </tbody>
+    </table>
+
+
+  
+
+  
+  </div>

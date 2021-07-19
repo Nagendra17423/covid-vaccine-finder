@@ -1,0 +1,67 @@
+
+
+<div class=" container mx-auto mt-4 text-center " >
+    <div class="ui form mx-auto " style="border:  1px solid black;" >
+        <div class="fields " style="padding:10px;">
+          <div class="field col-lg-6">
+             <label>State:</label>
+            <!--<input type="text" #state placeholder="State"> -->
+            <select name="c" class="form-control mx-auto" 
+       #s (change)="lookDistrict(s.value)">
+        <option class="mx-auto text-center" 
+        *ngFor="let i of state" 
+        value={{i.state_id}} >{{i.state_name}}
+     </option>
+     </select>
+
+          </div>
+          <div class="field col-lg-6 ">
+          <label>District</label>
+             <!--  <input type="text" #district placeholder="District"> -->
+
+        <select name="c" class="form-control mx-auto" 
+       #d>
+        <option class="mx-auto text-center" 
+        *ngFor="let i of district" 
+        value={{i.district_id}} >{{i.district_name}}
+     </option>
+     </select>
+
+          </div>
+          <br>
+           
+        </div>
+        <button class="positive ui button" 
+        (click)="submit(s.value,d.value)">
+           Submit
+       </button>
+      </div>
+
+
+      
+      <table class="ui celled table" *ngIf="data" >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>No Of Shots(Dose1)</th>
+            <th>No Of Shots(Dose2)</th>
+            <th>Fee Type</th>
+            <th>Vaccine</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let center of data">
+            <td class="positive">{{center.name}}</td>
+            <td class="{{center.available_capacity_dose1===0?'negative':
+            'positive'}}">
+                {{center.available_capacity_dose1}}</td>
+            <td class="{{center.available_capacity_dose2===0?'negative':'positive'}}">{{center.available_capacity_dose2}}</td>
+            <td class="{{center.fee_type==='Free'?'positive':'negative'}}">{{center.fee_type}} | {{center.fee |currency:"INR":"symbol"}} </td>
+            <td class="{{center.vaccine !=='' ?'positive':'negative'}}">{{center.vaccine}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+  </div>

@@ -1,0 +1,67 @@
+<div class=" container mx-auto mt-4  " >
+    <div class="ui form mx-auto " style="border:  1px solid black;" >
+        <div class="fields text-center" style="padding:10px;">
+          <div class="field mx-auto" style="width:50%;">
+            <label>Pincode</label>
+            <input class="col-lg-10" type="number" #pincode placeholder="Pincode">
+            <br>
+            <br>
+            <button class="positive ui button" 
+             (click)="submit(pincode.value)">
+                Submit
+            </button>
+           
+          </div>
+        </div>
+      </div>
+
+      <table class="ui celled table" *ngIf="data" >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>No Of Shots(Dose1)</th>
+            <th>No Of Shots(Dose2)</th>
+            <th>Fee Type</th>
+            <th>Vaccine</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let center of data">
+            <td class="positive">{{center.name}}</td>
+            <td class="{{center.available_capacity_dose1===0?'negative':
+            'positive'}}">
+                {{center.available_capacity_dose1}}</td>
+            <td class="{{center.available_capacity_dose2===0?'negative':'positive'}}">{{center.available_capacity_dose2}}</td>
+            <td class="{{center.fee_type==='Free'?'positive':'negative'}}">{{center.fee_type}} | {{center.fee |currency:"INR":"symbol"}} </td>
+            <td>{{center.vaccine}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+      <!-- <tbody>
+        <tr>
+          <td>No Name Specified</td>
+          <td>Unknown</td>
+          <td class="negative">None</td>
+        </tr>
+        <tr class="positive">
+          <td>Jimmy</td>
+          <td><i class="icon checkmark"></i> Approved</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>Jamie</td>
+          <td>Unknown</td>
+          <td class="positive"><i class="icon close"></i> Requires call</td>
+        </tr>
+        <tr class="negative">
+          <td>Jill</td>
+          <td>Unknown</td>
+          <td>None</td>
+        </tr>
+      </tbody> -->
+
+
+  </div>
